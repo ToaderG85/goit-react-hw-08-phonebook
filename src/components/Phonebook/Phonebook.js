@@ -23,7 +23,7 @@ export const Phonebook = () => {
  
  const handleLogout = () => {
   dispatch(logout());
-  navigate("/");
+  navigate("/goit-react-hw-08-phonebook");
   };
 
  useEffect(() => {
