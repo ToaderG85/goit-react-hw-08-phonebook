@@ -4,11 +4,9 @@
     justify-content: center;
     align-items: center;
     gap: 10px;
-    margin: 20px 0;
     border: 1px solid #000;
     border-radius: 5px;
     padding: 10px;
-    background: rgba(16, 33, 54, 0.8);
     box-shadow: 0px 1px 1px rgba(0,0,0,.12), 0px 4px 4px rgba(0,0,0,.06), 1px 4px 6px rgba(0,0,0,.16);
 }
 
@@ -20,7 +18,7 @@ form {
 
 h4 {
     font-size: 20px;
-    color: #fff;
+    color: #000;
 }
 
 label {
@@ -30,8 +28,3 @@ label {
     justify-content: center;
 }
 
-.add__button {
-    background-color: rgb(0, 255, 119);
-    font-weight: bold;
-    
-}

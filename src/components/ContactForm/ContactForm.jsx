@@ -4,6 +4,7 @@ import { nanoid } from 'nanoid';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { addContact } from 'redux/operations';
+import { Button } from '@mui/material';
 
 export default function ContactForm({onSubmit}) {
     const [name,setName] = useState('');
@@ -57,7 +58,28 @@ export default function ContactForm({onSubmit}) {
                     onChange={handleChange}
                 />
             </label>
-            <button className={style.add__button} type='submit'>Add to Contacts</button>
+            <Button
+            sx={{
+              margin: "auto",
+              paddingY: 1,
+              paddingX: 5,
+              color: '#000',
+              backgroundColor: 'rgb(4, 165, 79)',
+              fontSize: '14px',
+              fontWeight: 400,
+              textDecoration: 'none',            
+              borderRadius: 2,
+              minHeight: 12,
+              minWidth: 200,
+              '&:hover': {
+                backgroundColor: '#ffffff',                
+                border: 1,
+              },
+            }} 
+            variant="contained" 
+            onClick={handleSubmit}>
+            Add contact
+          </Button>
         </form>
     </div>    
   )

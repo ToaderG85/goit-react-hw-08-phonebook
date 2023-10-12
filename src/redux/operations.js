@@ -1,6 +1,15 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { contactsApi } from "api/api";
 
+
+import { auth } from "../firebase";
+
+import {
+    createUserWithEmailAndPassword,
+    signInWithEmailAndPassword,
+    signOut,
+  } from "firebase/auth";
+
 export const fetchContacts = createAsyncThunk(
     "contacts/fetchContacts",
     async (_,thunkAPI) => {
@@ -36,4 +45,43 @@ export const deleteContact = createAsyncThunk(
         }
     }
 );
+
+export const register = createAsyncThunk(
+    "user/register",
+    async (user, thunkAPI) => {
+      try {
+        const response = await createUserWithEmailAndPassword(
+          auth,
+          user.email,
+          user.password
+        );
+       
+        return response.user;
+      } catch (error) {
+        return thunkAPI.rejectWithValue(error.message);
+      }
+    }
+  );
+  
+  export const login = createAsyncThunk("user/login", async (user, thunkAPI) => {
+    try {
+      const response = await signInWithEmailAndPassword(
+        auth,
+        user.email,
+        user.password
+      );
+  
+      return response.user;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  });
+  
+  export const logout = createAsyncThunk("user/logout", async (_, thunkAPI) => {
+    try {
+      await signOut(auth);
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  });
 
