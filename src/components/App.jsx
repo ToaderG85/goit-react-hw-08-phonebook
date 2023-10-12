@@ -13,7 +13,7 @@ export const App = () => {
   return (
     <div>
       <Routes>
-        <Route path="/" element={<Home/>}/>
+        <Route path="/goit-react-hw-08-phonebook" element={<Home/>}/>
           <Route path='/login' element={<LoginPage/>}/>
           <Route path='/register' element={<RegisterPage/>}/>
           <Route element={<PrivateRoutes/>}>
