@@ -7,7 +7,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: url(../assets/phonebook_background.jpg);
+  background-color: #4158D0;
+  background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
   background-repeat: no-repeat;
   background-size: 100%;
   min-height: 800px;
@@ -24,3 +25,4 @@ code {
   margin-inline-start: 0px;
   margin-inline-end: 0px;
 }
+
